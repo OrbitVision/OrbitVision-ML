@@ -41,7 +41,7 @@ selected_sv = ['PG01', 'PE03', 'PR06', 'PC06', 'PC25', 'PJ02']
 #PC25 -22921.636470  14153.204294  -7253.602690    865.337418
 #PJ02 -24857.890879  17576.663091 -24405.961564     -0.191930
 
-import georinex as gr
+#import georinex as gr
 
 # file_path = 'orbit_raw/raw_sp3_data/COD0MGXFIN_20261370000_01D_05M_ORB.SP3'
 
