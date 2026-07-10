@@ -1,6 +1,5 @@
 ### 🛠️ CURRENTLY UNDER DEVELOPMENT
 *In data testing phase*
----
 
 # OrbitVision-ML: SGP4 Orbit Correction using Machine Learning
 
