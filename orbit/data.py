@@ -1,4 +1,19 @@
 selected_sv = ['PG01', 'PE03', 'PR06', 'PC06', 'PC25', 'PJ02']
+
+# Link for using spacetrrack to get data (need to modify NORAD_CAT_ID and EPOCH in the URL):
+# https://www.space-track.org/basicspacedata/query/class/gp_history/NORAD_CAT_ID/41860/EPOCH/%3E2026-05-30/orderby/EPOCH%20asc/emptyresult/show
+
+
+
+# mapping = {
+#     'PG01': '62339',
+#     'PE03': '41860',
+#     'PR06': '63130',
+#     'PC06': '44204',
+#     'PC25': '43603',
+#     'PJ02': '42738'
+# }
+
 ####### PG01 #######
 # G080 2024:352:00000 0000:000:00000 G01
 # G080 2024-242A 62339 GPS-IIIA Launched 2024-12-17; NAVSTAR 83

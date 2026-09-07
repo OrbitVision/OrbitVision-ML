@@ -1,0 +1,66 @@
+Tutaj info co by nie zapomniec co tu sie dzieje:
+
+Ogólny zamysł:
+Bierzemy ze spacetracl TLE na podst. którego liczymy pozycję z SGP4, którą przyrównujemy do danych SP3 z cddis.
+Następnie możemy policzyć deltę i błąd w czasie. Celem jest złączennie tego w jeden dataset z uwzględnieniem pogody słonecznej oraz błędu SGP4 porównanego do pozycji SP3
+w różnych ramach czasowych i z różnym odstępem czasowym między czasem TLE a obliczeniami SGP4 aby dane były jak najbardziej zróżnicowanie a następnie stworzenie sieci neuronowej przewidującej
+kierunek błędu i jego magnitudę.
+
+Aby dodać nowe satelity należy zmapować NORAD_ID na oznaczenie satelity np. PG01 na 62339 z wykorzystaniem igs_satellite_metadata,
+aby móc przypisać konkretne dane TLE z celes_track do danych SP3 z cddis (mieć pewność że to ta sama satelita).
+
+
+Mapowanie:
+     'PG01': '62339',
+     'PE03': '41860',
+     'PR06': '63130',
+     'PC06': '44204',
+     'PC25': '43603',
+     'PJ02': '42738'
+
+
+Info o satelitach ktore wykorzystuje:
+####### PG01 #######
+# G080 2024:352:00000 0000:000:00000 G01
+# G080 2024-242A 62339 GPS-IIIA Launched 2024-12-17; NAVSTAR 83
+
+##### PE03 ########
+#E212 2016:322:00000 0000:000:00000 E03 
+# E212 2016-069B  41860 GAL-2           Launched 2016-11-17; GALILEO 16 (26C)
+
+####### PR06 ########
+#R804 2025:358:19350 0000:000:00000 R06 start time from tracking data
+# R804 2025-042A  63130 GLO-K2          Launched 2025-03-02; COSMOS 2584
+
+####### PC06 #########
+#C220 2026:100:57600 0000:000:00000 C06 [PR04], NABU 20260006
+# C220 2019-023A  44204 BDS-3I          Launched 2019-04-20; BEIDOU 3 IGSO-1
+
+####### PC25 ##########
+#C212 2018:236:00000 0000:000:00000 C25 
+#C212 2018-067B  43603 BDS-3M-SECM-A   Launched 2018-08-24; BEIDOU 3M12
+
+######### PJ02 #########
+#J002 2017:152:00000 0000:000:00000 J02 [PR01]
+#J002 2017-028A  42738 QZS-2I          Launched 2017-06-01; MICHIBIKI-2
+
+
+
+
+Linki do danych:
+https://cddis.nasa.gov/archive/gnss/products/2419/
+https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=tle
+https://files.igs.org/pub/station/general/igs_satellite_metadata.snx
+https://www.space-track.org/#/queryBuilder
+https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/annual_reports/daily_solar_indices_summaries/daily_geomagnetic_data/
+https://www.ngdc.noaa.gov/stp/space-weather/swpc-products/annual_reports/daily_solar_indices_summaries/daily_solar_data/
+
+
+
+Link do spacetrack do query:
+Link for using spacetrrack to get data (need to modify NORAD_CAT_ID and EPOCH in the URL):
+https://www.space-track.org/basicspacedata/query/class/gp_history/NORAD_CAT_ID/41860/EPOCH/%3E2026-05-30/orderby/EPOCH%20asc/emptyresult/show
+
+
+
+
