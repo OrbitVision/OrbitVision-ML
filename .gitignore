@@ -3,3 +3,8 @@ __pycache__/
 *.onnx
 .ipynb_checkpoints/
 .env
+
+pobrane/
+unpacked_data/*
+
+!unpacked_data/dataset-metadata.json
