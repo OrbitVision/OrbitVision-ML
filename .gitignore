@@ -4,7 +4,9 @@ __pycache__/
 .ipynb_checkpoints/
 .env
 
-pobrane/
-unpacked_data/*
+# Poprawne zablokowanie całych folderów z danymi wewnątrz projektu:
+orbit/scrapper/pobrane/
+orbit/scrapper/unpacked_data/
 
-!unpacked_data/dataset-metadata.json
+# Wyjątek dla pliku konfiguracyjnego Kaggla:
+!orbit/scrapper/unpacked_data/dataset-metadata.json
