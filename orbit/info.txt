@@ -45,8 +45,6 @@ Info o satelitach ktore wykorzystuje:
 #J002 2017-028A  42738 QZS-2I          Launched 2017-06-01; MICHIBIKI-2
 
 
-
-
 Linki do danych:
 https://cddis.nasa.gov/archive/gnss/products/2419/
 https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=tle
@@ -62,5 +60,9 @@ Link for using spacetrrack to get data (need to modify NORAD_CAT_ID and EPOCH in
 https://www.space-track.org/basicspacedata/query/class/gp_history/NORAD_CAT_ID/41860/EPOCH/%3E2026-05-30/orderby/EPOCH%20asc/emptyresult/show
 
 
+
+Test:
+https://www.space-track.org/basicspacedata/query/class/gp_history/NORAD_CAT_ID/44204/EPOCH/%3E2025-12-31/orderby/EPOCH%20asc/emptyresult/show
+Brakuje danych z całego grudnia 2025 i prawie całego listopada :>
 
 
