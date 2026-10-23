@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('orbits_2025_processed.csv')
+df = pd.read_csv('big_data/orbits_2025_processed.csv')
 
 df['sat_id'] = 'P' + df['sat_id']
 filtered = df[df['sat_id'] == 'PC06']
