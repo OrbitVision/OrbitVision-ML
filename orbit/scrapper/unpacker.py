@@ -1,8 +1,8 @@
 import gzip
 import os
 
-source_dir = 'pobrane'
-unpacked_dir = 'unpacked_data'
+source_dir = 'pobrane_nwmSkad'
+unpacked_dir = 'unpacked_data2'
 
 os.makedirs(unpacked_dir, exist_ok=True)
 

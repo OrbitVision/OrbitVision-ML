@@ -3,12 +3,14 @@ import requests
 from bs4 import BeautifulSoup
 
 #dir_url = "https://cddis.nasa.gov/archive/gnss/products/2347/"
-output_dir = "pobrane"
+output_dir = "pobrane_nwmSkad"
 
+################## - tutaj istotne - 2347 do 2399 to cały rok 2025
 # start_week = 2347
 # end_week = 2399
-start_week = 2349
-end_week = 2349
+##################
+start_week = 2295
+end_week = 2347
 os.makedirs(output_dir, exist_ok=True)
 
 print(f"Pobieram listę plików z katalogu...")

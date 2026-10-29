@@ -7,6 +7,8 @@ __pycache__/
 # Poprawne zablokowanie całych folderów z danymi wewnątrz projektu:
 orbit/scrapper/pobrane/
 orbit/scrapper/unpacked_data/
+orbit/scrapper/pobrane_nwmSkad/
+orbit/scrapper/unpacked_data2/
 orbit/big_data/*
 
 # Wyjątek dla pliku konfiguracyjnego Kaggla:
