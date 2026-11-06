@@ -14,7 +14,7 @@ Mapowanie:
      'PG01': '62339',
      'PE03': '41860',
      'PR06': '63130',
-     'PC06': '44204',
+     'PC38': '44204', <------ od 10 kwietnia 2026 44204 przejął ID PC06
      'PC25': '43603',
      'PJ02': '42738'
 
@@ -32,7 +32,7 @@ Info o satelitach ktore wykorzystuje:
 #R804 2025:358:19350 0000:000:00000 R06 start time from tracking data
 # R804 2025-042A  63130 GLO-K2          Launched 2025-03-02; COSMOS 2584
 
-####### PC06 #########
+####### PC38 #########
 #C220 2026:100:57600 0000:000:00000 C06 [PR04], NABU 20260006
 # C220 2019-023A  44204 BDS-3I          Launched 2019-04-20; BEIDOU 3 IGSO-1
 

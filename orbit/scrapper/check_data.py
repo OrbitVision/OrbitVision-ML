@@ -3,7 +3,7 @@ import os
 import re
 
 # Wybierz folder do sprawdzenia ('unpacked_data' lub 'pobrane')
-target_dir = 'unpacked_data'
+target_dir = 'scrapper/unpacked_data2'
 
 found_dates = set()
 

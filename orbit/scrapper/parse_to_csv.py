@@ -43,7 +43,7 @@ def parse_sp3_file(filepath):
 
 def main():
     # Szuka plików w podfolderze unpacked_data, będąc w folderze scrapper
-    search_path = 'unpacked_data/*.SP3'
+    search_path = 'scrapper/unpacked_data2/*.SP3'
     sp3_files = glob.glob(search_path)
     
     print(f"Znaleziono {len(sp3_files)} plików SP3 w ścieżce: {search_path}")
