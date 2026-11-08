@@ -62,7 +62,7 @@ https://www.space-track.org/basicspacedata/query/class/gp_history/NORAD_CAT_ID/4
 
 
 Test:
-https://www.space-track.org/basicspacedata/query/class/gp_history/NORAD_CAT_ID/44204/EPOCH/%3E2025-12-31/orderby/EPOCH%20asc/emptyresult/show
+https://www.space-track.org/basicspacedata/query/class/gp_history/NORAD_CAT_ID/44204/EPOCH/%3E2024-12-31/orderby/EPOCH%20asc/emptyresult/show
 Brakuje danych z całego grudnia 2025 i prawie całego listopada :>
 
 
