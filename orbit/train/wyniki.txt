@@ -1,0 +1,13 @@
+Epoch [100/1000], Loss: 0.8357
+Epoch [200/1000], Loss: 7.2998
+Epoch [300/1000], Loss: 0.9660
+Epoch [400/1000], Loss: 3.1266
+Epoch [500/1000], Loss: 10.9367
+Epoch [600/1000], Loss: 0.8117
+Epoch [700/1000], Loss: 0.8893
+Epoch [800/1000], Loss: 0.8850
+Epoch [900/1000], Loss: 0.6737
+Epoch [1000/1000], Loss: 0.8785
+
+//////
+Przeskalowane:
