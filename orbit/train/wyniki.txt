@@ -1,3 +1,5 @@
+///////
+Deafault:
 Epoch [100/1000], Loss: 0.8357
 Epoch [200/1000], Loss: 7.2998
 Epoch [300/1000], Loss: 0.9660
@@ -10,4 +12,123 @@ Epoch [900/1000], Loss: 0.6737
 Epoch [1000/1000], Loss: 0.8785
 
 //////
-Przeskalowane:
+Przeskalowane z StandardScaler:
+Epoch [100/1000], Loss: 0.1370
+Epoch [200/1000], Loss: 0.1652
+Epoch [300/1000], Loss: 0.1510
+Epoch [400/1000], Loss: 0.3933
+Epoch [500/1000], Loss: 0.0785
+Epoch [600/1000], Loss: 0.0209
+Epoch [700/1000], Loss: 0.0206
+Epoch [800/1000], Loss: 0.0234
+Epoch [900/1000], Loss: 0.0180
+Epoch [1000/1000], Loss: 0.2213
+
+///////
+LearningRate z 0.01 na 0.001:
+Epoch [100/1000], Loss: 0.1918
+Epoch [200/1000], Loss: 0.0223
+Epoch [300/1000], Loss: 0.2074
+Epoch [400/1000], Loss: 0.0144
+Epoch [500/1000], Loss: 0.0203
+Epoch [600/1000], Loss: 0.0165
+Epoch [700/1000], Loss: 0.0201
+Epoch [800/1000], Loss: 0.0466
+Epoch [900/1000], Loss: 0.0150
+Epoch [1000/1000], Loss: 0.0214
+
+
+//////
+LearningRate na 0.01 i loss na SmoothL1;
+Epoch [100/1000], Loss: 0.0076
+Epoch [200/1000], Loss: 0.0069
+Epoch [300/1000], Loss: 0.0705
+Epoch [400/1000], Loss: 0.0072
+Epoch [500/1000], Loss: 0.0209
+Epoch [600/1000], Loss: 0.0099
+Epoch [700/1000], Loss: 0.0036
+Epoch [800/1000], Loss: 0.0071
+Epoch [900/1000], Loss: 0.0026
+Epoch [1000/1000], Loss: 0.0021
+
+
+
+/////
+Zamiana z ReLu na GELU:
+Epoch [100/1000], Loss: 0.0067
+Epoch [200/1000], Loss: 0.0036
+Epoch [300/1000], Loss: 0.0091
+Epoch [400/1000], Loss: 0.2426
+Epoch [500/1000], Loss: 0.0012
+Epoch [600/1000], Loss: 0.0012
+Epoch [700/1000], Loss: 0.0685
+Epoch [800/1000], Loss: 0.0009
+Epoch [900/1000], Loss: 0.0009
+Epoch [1000/1000], Loss: 0.0735
+
+
+
+
+Powyższe wyniki mimio małego loss są niepoprawne, model wpadł w mean collapse, i po wypisaniu predykcji z porównaniem do realnych błędów model dla każdej osi wyrzucał jedną urednioną wartosc.
+Zmiana lr na 0.001 pomogła:
+Epoch [100/1000], Loss: 0.0731
+Epoch [200/1000], Loss: 0.0650
+Epoch [300/1000], Loss: 0.0329
+Epoch [400/1000], Loss: 0.0219
+Epoch [500/1000], Loss: 0.0069
+Epoch [600/1000], Loss: 0.0128
+Epoch [700/1000], Loss: 0.0035
+Epoch [800/1000], Loss: 0.0034
+Epoch [900/1000], Loss: 0.0017
+Epoch [1000/1000], Loss: 0.0013
+Średni Loss na zbiorze testowym: 0.0126 km
+MAE na osi X: 0.05 km
+MAE na osi Y: 0.07 km
+MAE na osi Z: 0.04 km
+Średni błąd 3D (Euclidean): 0.10 km
+Porównanie rzeczywistego błędu SGP4 z korektą przewidzianą przez model:
+=====================================================================================
+    Real_Err_X [km]  Model_Pred_X [km]  Real_Err_Y [km]  Model_Pred_Y [km]  Real_Err_Z [km]  Model_Pred_Z [km]
+0             0.131              0.127            0.134              0.031            0.016              0.070
+1             0.118              0.095            0.160              0.131            0.046              0.035
+2             0.123              0.111            0.164              0.133            0.044              0.022
+3             0.113              0.019            0.233              0.132            0.013              0.030
+4             0.109              0.107            0.116              0.123            0.020              0.026
+5             0.095              0.012            0.105             -0.012            0.039              0.072
+6             0.110              0.088            0.120              0.075            0.024              0.015
+7             0.111              0.094            0.071              0.106            0.015              0.027
+8             0.148              0.111            0.035              0.042            0.032              0.044
+9             0.076              0.089           -0.014             -0.034            0.019              0.015
+10            0.107              0.107            0.108              0.125            0.016              0.031
+11            0.131              0.125            0.129              0.124            0.045              0.039
+12            0.090              0.150            0.119              0.103            0.024              0.012
+13            0.102             -0.635            0.133             -0.610            0.027              0.436
+14            0.091              0.060            0.006             -0.015            0.017              0.045
+15            0.107              0.136            0.098              0.117            0.004              0.020
+16            0.095              0.129            0.052              0.116            0.034              0.046
+17            0.120              0.109            0.161              0.122            0.035              0.048
+18            0.099              0.104            0.107              0.102            0.026              0.043
+19            0.125              0.112            0.114              0.124            0.019              0.024
+
+
+
+
+
+
+
+Okazuje się że model dawał sensowne wyniki z powodu data leakage, po splicie danych bez random, żeby model podczas testu nie miał sugestii ze zbliżonych TLE danych treningowych otrzymujemy:
+
+=== PODSUMOWANIE OGÓLNE 3D [km] ===
+SGP4  -> Średnia: 6.159 | Mediana: 1.491 | 90th perc: 3.639
+Model -> Średnia: 8.943 | Mediana: 3.009 | 90th perc: 11.827
+
+=== BŁĄD 3D W ROZBICIU NA DAYS_OFFSET [km] ===
+             Liczba_Próbek  Mediana_SGP4  Mediana_Model  Średnia_SGP4  Średnia_Model  90perc_SGP4  90perc_Model
+days_offset                                                                                                    
+0                    106.0         1.253          2.937         1.398          4.228        2.439         8.457
+1                    107.0         1.117          2.895         3.103          5.929        2.518         9.069
+3                    107.0         1.331          2.625         5.669          8.509        2.154        10.498
+5                    108.0         2.937          3.886        14.346         16.987        4.605        15.743
+
+Co oznacza, że model jedynie pogarsza wyniki bazowego sgp4 wprowadzając niepotrzebny szum.
+Krokiem do poprawy może być modyfikacja modelu i zmiana days offset z 0,1,3,5 na wynikiki przez 10dni co 6h co da nam 40 wierszy na jedną epokę TLE
