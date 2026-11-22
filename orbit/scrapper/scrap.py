@@ -9,8 +9,8 @@ output_dir = "pobrane_nwmSkad"
 # start_week = 2347
 # end_week = 2399
 ##################
-start_week = 2295
-end_week = 2347
+start_week = 2243
+end_week = 2295
 os.makedirs(output_dir, exist_ok=True)
 
 print(f"Pobieram listę plików z katalogu...")

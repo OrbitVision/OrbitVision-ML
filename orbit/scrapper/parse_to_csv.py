@@ -43,7 +43,7 @@ def parse_sp3_file(filepath):
 
 def main():
     # Szuka plików w podfolderze unpacked_data, będąc w folderze scrapper
-    search_path = 'scrapper/unpacked_data2/*.SP3'
+    search_path = './unpacked_data2/*.SP3'
     sp3_files = glob.glob(search_path)
     
     print(f"Znaleziono {len(sp3_files)} plików SP3 w ścieżce: {search_path}")
@@ -61,7 +61,7 @@ def main():
     df = pd.DataFrame(all_data)
     
     # Zapis do CSV w bieżącym folderze scrapper
-    output_path = 'orbits_2025_processed.csv'
+    output_path = 'orbits_2023_sp3.csv'
     df.to_csv(output_path, index=False)
     print(f"Sukces! Zapisano wszystkie dane do {output_path} (łącznie wierszy: {len(df)})")
 
